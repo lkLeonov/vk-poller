@@ -33,7 +33,7 @@
 						var postText = post.text;
 						var postDate = parseDate( post.date );
 
-						$newDiv.html('at <time>' + postDate + '</time><br>' + postText + '<hr>').appendTo('#posts');
+						$newDiv.html('at <time>' + postDate + '</time><br>' + postText + '<hr>').prependTo('#posts');
 
 
 					});
