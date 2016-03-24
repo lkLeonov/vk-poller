@@ -15,7 +15,7 @@
 		FB_ROOT.on("child_added", function(snapshot) {
 
 			console.log('Snapshot Key: ' + snapshot.key(), 'Snapshot Val: ' + snapshot.val());
-			var newDiv = $('</div>').addClass('post-text').attr('id', snapshot.key()).html(snapshot.val());
+			var $newDiv = $('</div>').addClass('post-text').attr('id', snapshot.key()).html(snapshot.val());
 
 			$newDiv.appendTo('#posts');
 		});
