@@ -17,6 +17,10 @@
 			var newDiv = $('</div>').addClass('comment').attr('id', snapshot.name()).appendTo('#elements');
 
 		})
+
+		FB_ROOT.on("value", function(snapshot) {
+		  alert(snapshot.val());  // Alerts "San Francisco"
+		});
 	</script>
 </body>
 </html>
