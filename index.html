@@ -5,21 +5,15 @@
 	<title>VK Poller test</title>
 </head>
 <body>
-	<div id="elements"></div>
+	<div id="posts"></div>
 
 	<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 	<script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
 	<script>
-		const FB_ROOT = new Firebase('https://scrapyard.firebaseio.com/');
+		var FB_ROOT = new Firebase('https://scrapyard.firebaseio.com/');
 
-		FB_ROOT.on('child_added',function(snapshot){
-			var element = snapshot.val();
-			var newDiv = $('</div>').addClass('comment').attr('id', snapshot.name()).appendTo('#elements');
-
-		})
-
-		FB_ROOT.on("value", function(snapshot) {
-		  console.log(snapshot.val());  // Alerts "San Francisco"
+		FB_ROOT.on("child_added", function(snapshot) {
+			var newDiv = $('</div>').addClass('post-text').attr('id', snapshot.key()).html(snapshot.val()).appendTo('#posts');
 		});
 	</script>
 </body>
